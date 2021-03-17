@@ -26,4 +26,10 @@ class StringsTest {
         array[4] = "x";
         Strings.longestCommonPrefix(array);
     }
+
+
+    @Test
+    void test1() {
+        Strings.isPalindrome("A man, a plan, a canal: Panama");
+    }
 }

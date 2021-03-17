@@ -44,4 +44,22 @@ public class LinkList {
         }
         return head.next;
     }
+
+
+
+    public ListNode reverseList(ListNode head) {
+        if (head.next == null) {
+            return head;
+        }
+        ListNode h = new ListNode();
+        h.next = head;
+        ListNode q = head.next.next;;
+        do {
+
+            head.next = h.next;
+            h.next = head;
+            head = q;
+        } while (q != null);
+        return head;
+    }
 }

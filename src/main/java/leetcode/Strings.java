@@ -72,4 +72,22 @@ public class Strings {
         return "";
     }
 
+
+    public static boolean isPalindrome(String s) {
+        Stack<Character> stack = new Stack<>();
+        List<Character> newArray = new ArrayList<>();
+        for (int i = 0; i< s.length(); i++) {
+            if (Character.isLetterOrDigit(s.charAt(i))) {
+                stack.push(s.charAt(i));
+                newArray.add(s.charAt(i));
+            }
+        }
+        for (int i = 0; i < newArray.size() /2; i++) {
+            if(Character.toLowerCase(newArray.get(i)) != Character.toLowerCase(stack.pop())) {
+                return false;
+            }
+        }
+        return true;
+    }
+
 }

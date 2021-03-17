@@ -1,10 +1,7 @@
 import cn.hutool.core.collection.CollectionUtil;
 import cn.hutool.core.convert.impl.CollectionConverter;
 
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.LinkedList;
-import java.util.Scanner;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args){
@@ -18,6 +15,7 @@ public class Main {
 //        int max = 0;
 
         MaxSubSeqSum.dpMax(new int[]{-2,1,-3,4,-1,2,1,-5,4});
+        
     }
 
 

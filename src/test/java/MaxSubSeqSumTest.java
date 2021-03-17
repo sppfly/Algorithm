@@ -17,4 +17,10 @@ class MaxSubSeqSumTest {
         int[] a = {0,-1,1,3};
         Assertions.assertEquals(4,MaxSubSeqSum.MaxSubSeqSum1(a));
     }
+
+
+    @Test
+    void test() {
+        MaxSubSeqSum.MaxSubSeqSum3(new int[]{-2,1,-3,4,-1,2,1,-5,4});
+    }
 }
