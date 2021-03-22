@@ -7,7 +7,7 @@ import dataStructures.exception.DataStructureException;
  * @Description: 链栈，没有大小限制
  * @date 2021/3/13 14:58
  */
-public class MyListStack implements MyStack{
+public class MyLinkStack implements MyStack{
 
 
     private Node head;
@@ -30,7 +30,7 @@ public class MyListStack implements MyStack{
         }
     }
 
-    public MyListStack() {
+    public MyLinkStack() {
         this.head = new Node();
         this.size = 0;
     }

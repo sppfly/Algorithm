@@ -17,6 +17,9 @@ public class MyArrayQueue implements MyQueue{
     private int size;
 
     public MyArrayQueue(int initialSize) {
+        array = new int[initialSize];
+        size = 0;
+        front = 0;
     }
 
     @Override

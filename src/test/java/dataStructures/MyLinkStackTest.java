@@ -9,21 +9,21 @@ import static org.junit.jupiter.api.Assertions.*;
  * @Description:
  * @date 2021/3/17 21:26
  */
-class MyListStackTest {
+class MyLinkStackTest {
 
     @Test
     void isFull() {
-        MyListStack myListStack = new MyListStack();
-        assertTrue(myListStack.isEmpty());
-        assertTrue(!myListStack.isFull());
+        MyLinkStack myLinkStack = new MyLinkStack();
+        assertTrue(myLinkStack.isEmpty());
+        assertTrue(!myLinkStack.isFull());
         for (int i = 0; i < 10; i++) {
-            myListStack.push(i);
+            myLinkStack.push(i);
         }
 
         for (int i = 9; i >= 0; i--) {
 //            System.out.println(myListStack.pop());
-            assertEquals(myListStack.pop(), i);
+            assertEquals(myLinkStack.pop(), i);
         }
-        myListStack.pop();
+        myLinkStack.pop();
     }
 }

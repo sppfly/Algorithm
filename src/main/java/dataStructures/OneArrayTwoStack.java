@@ -4,7 +4,7 @@ import dataStructures.exception.DataStructureException;
 
 /**
  * @author shuxiahua
- * @Description:
+ * @Description: 一个数组实现两个栈
  * @date 2021/3/17 21:40
  */
 public class OneArrayTwoStack {
