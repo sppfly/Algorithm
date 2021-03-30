@@ -1,4 +1,4 @@
-package fundamental;
+package dataStructures;
 
 /**
  * @author shuxiahua

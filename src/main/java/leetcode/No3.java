@@ -12,22 +12,23 @@ public class No3 {
 
 
     /**
-     * @Description:
+     * @Description: 滑动窗口解
      * @author liuyi
      * @date 2021/3/15 22:12
      */
-    public int lengthOfLongestSubstring(String s) {
+    public static int lengthOfLongestSubstring(String s) {
         if (s == null || s.length() == 0) {
             return 0;
         }
-        Set<Character> set = new HashSet<>();
         int max = 1;
+        Set<Character> set = new HashSet<>();
         for (int i = 0; i < s.length(); i++) {
-            int thisMax = 1;
-            for (int j = i + 1; j < s.length(); j++) {
+            int thisMax = 0;
+            for (int j = i; j < s.length(); j++) {
                 if (set.add(s.charAt(j))) {
                     thisMax++;
                 } else {
+                    set.clear();
                     break;
                 }
             }

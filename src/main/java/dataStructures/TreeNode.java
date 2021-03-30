@@ -1,4 +1,4 @@
-package fundamental;
+package dataStructures;
 
 
 /**
@@ -36,5 +36,14 @@ public class TreeNode {
 
     public void setRight(TreeNode right) {
         this.right = right;
+    }
+
+    @Override
+    public String toString() {
+        return "TreeNode{" +
+                "value=" + value +
+                ", left=" + left +
+                ", right=" + right +
+                '}';
     }
 }
