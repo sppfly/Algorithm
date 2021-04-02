@@ -12,9 +12,21 @@ public interface MyQueue {
 
     boolean isEmpty();
 
+    /**
+     * 入队
+     * @return
+     */
     boolean add();
 
+    /**
+     * 出队
+     * @return
+     */
     boolean delete();
 
-    boolean rear();
+    /**
+     * 获取队尾元素，但是不出队
+     * @return
+     */
+    int rear();
 }

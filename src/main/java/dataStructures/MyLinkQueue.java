@@ -1,5 +1,7 @@
 package dataStructures;
 
+import dataStructures.exception.DataStructureException;
+
 /**
  * @author shuxiahua
  * @Description: 链队列，链表的头为队尾，即出队一端，链表的尾为入队一端，相反做法需要保存队列前面一个位置
@@ -7,14 +9,20 @@ package dataStructures;
  */
 public class MyLinkQueue implements MyQueue{
 
-    private Node front;
+    /**
+     * 链表头但是是队尾，出队从front端出
+     */
+    private Node head;
 
+    /**
+     * 链表尾，入对从end入队
+     */
     private Node rear;
 
     private int size;
 
     /**
-     * 链栈的一个节点
+     * 链队列的一个节点
      */
     private class Node {
         int value;
@@ -30,6 +38,11 @@ public class MyLinkQueue implements MyQueue{
     }
 
 
+    public MyLinkQueue() {
+        this.size = 0;
+        this.head = new Node();
+        this.rear = new Node();
+    }
 
     @Override
     public boolean isFull() {
@@ -38,7 +51,7 @@ public class MyLinkQueue implements MyQueue{
 
     @Override
     public boolean isEmpty() {
-        return false;
+        return size == 0;
     }
 
     @Override
@@ -52,7 +65,10 @@ public class MyLinkQueue implements MyQueue{
     }
 
     @Override
-    public boolean rear() {
-        return false;
+    public int rear() {
+        if (size == 0) {
+            throw new DataStructureException("");
+        }
+        return head.next.value;
     }
 }

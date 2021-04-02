@@ -7,7 +7,7 @@ package dp;
  * @Description:
  * @date 2020/12/27 14:30
  */
-public class basic {
+public class Basic {
 
     /**
      * 青蛙跳台阶问题

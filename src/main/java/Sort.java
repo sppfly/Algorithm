@@ -74,19 +74,39 @@ public class Sort {
         public static void quick(int[] nums) {
             quick(nums, 0, nums.length - 1);
         }
+
         private static void quick(int[] nums, int low, int high) {
             if (low >= high) {
                 return;
             }
-            int j = 0;
+            int j = partition(nums, low, high);
             quick(nums, low, j-1);
             quick(nums, j+1, high);
         }
 
         private static int partition(int[] nums, int low, int high) {
             int pivot = nums[high];
-            
+            int i = low, j = high - 1;
+            while(true) {
+                while (nums[i] < pivot) {
+                    i++;
+                }
+                while (nums[j] > pivot) {
+                    j--;
+                }
+                if (i < j) {
+                    swap(nums, i, j);
+                    i++;
+                    j--;
+                } else {
+                    break;
+                }
+            }
+            swap(nums, high, j+1);
+            return j+1;
         }
+
+
     }
 
     /**
@@ -98,5 +118,11 @@ public class Sort {
 
     }
 
+
+    private static void swap(int[] nums, int i, int j) {
+        int temp = nums[i];
+        nums[i] = nums[j];
+        nums[j] = temp;
+    }
 
 }

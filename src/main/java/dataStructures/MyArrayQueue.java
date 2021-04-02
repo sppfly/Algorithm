@@ -43,7 +43,7 @@ public class MyArrayQueue implements MyQueue{
     }
 
     @Override
-    public boolean rear() {
-        return false;
+    public int rear() {
+        return 0;
     }
 }
