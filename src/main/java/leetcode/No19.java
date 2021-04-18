@@ -23,6 +23,7 @@ class No19 {
         }
         //p is the former node and q is the latter
         ListNode p = head, q = head;
+        q.next = head;
         int i = 0;
         while(p.next != null) {
             p = p.next;

@@ -8,11 +8,11 @@ package dataStructures;
  */
 public class TreeNode {
 
-    private int value;
+    public int value;
 
-    private TreeNode left;
+    public TreeNode left;
 
-    private TreeNode right;
+    public TreeNode right;
 
     public int getValue() {
         return value;

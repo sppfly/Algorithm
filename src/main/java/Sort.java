@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 /**
  * @author shuxiahua
  * @Description: 排序算法
@@ -115,7 +117,52 @@ public class Sort {
      * @date 2021/3/25 20:29
      */
     public static void merge(int[] nums) {
+        int[] temp = new int[nums.length];
+        merge(nums, temp, 0, nums.length-1);
+    }
 
+    private static void merge (int[] nums, int[] result, int low, int high) {
+        if (low >= high) {
+            return;
+        }
+        int mid = (low + high) / 2;
+        merge(nums, result, low, mid);
+        merge(nums, result, mid+1, high);
+        doMerge(nums, result, low, mid, high);
+    }
+
+    /**
+     * 合并两个有序数组，再把这些东西拷回去
+     * @param nums
+     * @param result
+     * @param low
+     * @param mid
+     * @param high
+     */
+    private static void doMerge(int[] nums, int[] result, int low, int mid, int high) {
+        int i = low, j = mid + 1, index = 0;
+        while (i<=mid && j<=high) {
+            if (nums[i] > nums[j]) {
+                result[index] = nums[j++];
+            } else {
+                result[index] = nums[i++];
+            }
+            index++;
+        }
+        if (i==mid+1) {
+            while (j<=high) {
+                result[index++] = nums[j++];
+            }
+        } else {
+            while (i<=mid) {
+                result[index++] = nums[i++];
+            }
+        }
+        index = 0;
+        while (index <= high-low) {
+            nums[low+index] = result[index];
+            index++;
+        }
     }
 
 
