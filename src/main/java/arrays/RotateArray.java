@@ -1,6 +1,4 @@
-package Arrays;
-
-import java.util.ArrayList;
+package arrays;
 
 /**
  * @author shuxiahua

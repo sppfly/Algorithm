@@ -14,26 +14,23 @@ class No19 {
      * @date 2021/3/25 20:55
      */
     public ListNode removeNthFromEnd(ListNode head, int n) {
-        if (head.next == null) {
-            if (n == 0) {
-                return head;
-            } else {
-                return null;
-            }
-        }
-        //p is the former node and q is the latter
-        ListNode p = head, q = head;
-        q.next = head;
         int i = 0;
-        while(p.next != null) {
-            p = p.next;
+        ListNode x = head, y = head, pre = head;
+        while (x.next != null) {
             if (i < n) {
                 i++;
             } else {
-                q = q.next;
+                pre = y;
+                y = y.next;
             }
+            x = x.next;
         }
-        q.next = q.next.next;
+        if (x==y) {
+            pre.next = null;
+        } else {
+            y.val = y.next.val;
+            y.next = y.next.next;
+        }
         return head;
     }
 }
