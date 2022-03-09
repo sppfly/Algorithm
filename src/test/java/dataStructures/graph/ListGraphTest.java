@@ -1,7 +1,5 @@
 package dataStructures.graph;
 
-import edu.princeton.cs.algs4.DepthFirstSearch;
-import edu.princeton.cs.algs4.Graph;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
