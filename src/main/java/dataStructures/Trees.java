@@ -1,7 +1,10 @@
 package dataStructures;
 
 
+import cn.hutool.core.lang.tree.Tree;
+
 import java.util.ArrayDeque;
+import java.util.Deque;
 import java.util.LinkedList;
 import java.util.Queue;
 
@@ -76,6 +79,23 @@ public class Trees {
         if (!deque.isEmpty()) {
             subTraverse(deque.poll(), deque);
         }
+    }
+
+
+    /**
+     * 二叉树中序非递归遍历
+     * @param treeNode
+     */
+    public static void VLRNoRecursionTraverse(TreeNode treeNode) {
+        Deque<TreeNode> deque = new ArrayDeque<>();
+        while (true) {
+            if (treeNode != null) {
+                deque.push(treeNode);
+            }
+            break;
+
+        }
+
     }
 
     /**
