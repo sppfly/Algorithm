@@ -1,6 +1,5 @@
 package leetcode;
 
-import cn.hutool.core.collection.CollectionUtil;
 import org.apache.commons.lang3.ArrayUtils;
 
 import java.util.*;

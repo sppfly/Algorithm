@@ -1,5 +1,3 @@
-import cn.hutool.core.collection.CollectionUtil;
-import cn.hutool.core.convert.impl.CollectionConverter;
 
 import java.util.*;
 
@@ -14,8 +12,10 @@ public class Main {
 //        }
 //        int max = 0;
 
-        MaxSubSeqSum.dpMax(new int[]{-2,1,-3,4,-1,2,1,-5,4});
-        
+        Map<String, String> map = new HashMap<>();
+        map.put("y", "y");
+        System.out.println(1 ^ 1);
+//        "y".hashCode()
     }
 
 
