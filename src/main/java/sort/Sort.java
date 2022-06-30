@@ -1,3 +1,4 @@
+package sort;
 import java.util.Arrays;
 
 /**
@@ -8,7 +9,7 @@ import java.util.Arrays;
 public class Sort {
 
 
-    static class Select {
+    public static class Select {
         /**
          * @Description: 简单选择排序，O(N2) 稳定
          * @author liuyi
@@ -33,7 +34,7 @@ public class Sort {
 
 
 
-    static class Insert {
+    public static class Insert {
         /**
          * @Description: 简单插入排序 O(n2) 稳定
          * @author liuyi
@@ -57,7 +58,7 @@ public class Sort {
 
 
 
-    static class Exchange {
+    public static class Exchange {
         /**
          * @Description: 冒泡排序
          * @author liuyi
