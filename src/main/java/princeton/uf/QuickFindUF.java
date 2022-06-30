@@ -1,37 +1,55 @@
-package princeton;
+package princeton.uf;
 
 import edu.princeton.cs.algs4.StdIn;
 import edu.princeton.cs.algs4.StdOut;
-import edu.princeton.cs.algs4.UF;
 
 /**
  * @author shuxiahua
  * @Description:
  * @date 2021/4/20 21:54
  */
-public class UnionFind {
+public class QuickFindUF implements UF{
 
     private int size;
 
-    public UnionFind(int size) {
+    private int count;
+
+    private int[] nums;
+
+    public QuickFindUF(int size) {
+        this.nums = new int[size];
+        for (int i=0; i<size; i++) nums[i] = i;
         this.size = size;
+        this.count = size;
     }
 
-    void union(int p, int q) {
-
+    public void union(int p, int q) {
+        int phead = find(p);
+        int qhead = find(q); 
+        for (int i=0; i < this.size; i++) {
+            if (find(i) == qhead) {
+                nums[i] = phead;
+            }
+        }
+        count--;
     }
+
+    public int find(int p) {
+        return nums[p];
+    }
+
 
     boolean connected(int p, int q) {
-        return false;
+        return find(p) == find(q);
     }
 
     int count() {
-        return 0;
+        return count;
     }
 
     public static void main(String[] args) {
         int n = StdIn.readInt();
-        UnionFind uf = new UnionFind(n);
+        QuickFindUF uf = new QuickFindUF(n);
         while (!StdIn.isEmpty()) {
             int p = StdIn.readInt();
             int q = StdIn.readInt();

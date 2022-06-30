@@ -1,3 +1,4 @@
+package leetcode;
 /**
  * @author shuxiahua
  * @version 1.0.0
