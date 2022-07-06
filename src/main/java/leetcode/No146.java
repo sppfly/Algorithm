@@ -2,6 +2,9 @@ package leetcode;
 
 import java.util.HashMap;
 
+/**
+ * 现在的问题是，当重置某个key的value时，某些情况会导致别的值被删除
+ */
 public class No146 {
     class LRUCache {
 
