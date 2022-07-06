@@ -1,8 +1,40 @@
 package dataStructures;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
+
+
+import java.util.HashMap;
+import java.util.Random;
+
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 public class MyHashMapTest {
+
+
+
+
+
+    @Test
+    void testGetAndPut() {
+        MyHashMap<Integer, Integer> map = new MyHashMap<>();
+        int N = 100;
+        Random random = new Random();
+        Integer[] nums = new Integer[N];
+        for (int i=0; i<N; i++) {
+            Integer test = random.nextInt();
+            nums[i] = test;
+            map.put(test, test);
+        }
+        for (int i=0; i<N; i++) {
+            Integer v = map.get(nums[i]);
+            assertEquals(v, nums[i]);
+        }
+    }
+
+
+
     @Test
     void testClear() {
 
