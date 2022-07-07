@@ -3,7 +3,8 @@ package leetcode;
 import java.util.HashMap;
 
 /**
- * 现在的问题是，当重置某个key的value时，某些情况会导致别的值被删除
+ * 2022/7/7: AC, T92 M88
+ * 2022/7/6: 现在的问题是，当重置某个key的value时，某些情况会导致别的值被删除
  */
 public class No146 {
     class LRUCache {
@@ -48,11 +49,12 @@ public class No146 {
             this.head = new Node();
             this.recent = head;
         }
+        
 
-        public int get(int key) {
+        private Node getNode(int key) {
             Node node = map.get(key);
-            if (node == null) return -1;
-            if (node == recent) return node.val;
+            if (node == null) return null;
+            if (node == recent) return node;
             // 将此节点放在链表最下面
             node.prev.next = node.next;
             node.next.prev = node.prev;
@@ -60,11 +62,21 @@ public class No146 {
             recent.next = node;
             node.next = null;
             recent = node;
-            return node.val;
+            return node;
+        }
+
+        public int get(int key) {
+            Node node = getNode(key);
+            return node == null ? -1 : node.val;
         }
 
         public void put(int key, int value) {
-            Node node = new Node(key, value);
+            Node node = getNode(key);
+            if (node != null) {
+                node.val = value;
+                return;
+            }
+            node = new Node(key, value);
             recent.next = node;
             node.prev = recent;
             node.next = null;
@@ -74,8 +86,8 @@ public class No146 {
                 Node least = head.next;
                 head.next = least.next;
                 least.next.prev = head;
-                least = null;
                 map.remove(least.key);
+                least = null;
                 size--;
             }
             map.put(key, node);
